@@ -72,10 +72,15 @@ table#schedule {
 			width : 50px;
 		}
 		&.destination {
-
+			> .icon {
+				margin-left: 50px
+			}
 		}
 		&.location {
 			width : 280px;
+			> .icon {
+				margin-left: 50px
+			}
 		}
 		&.time {
 			width : 72px;
@@ -126,7 +131,7 @@ table#schedule {
 			margin : 0 auto;
 		}
 	}
-	.destination, .location, .time {
+	.destination, .location {
 		color      : $gray;
 		font-size  : 22px;
 		text-align : left;
