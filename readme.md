@@ -1,9 +1,10 @@
-Fitness DMI Calendar Page
+#Fitness DMI Calendar Page
 
-TODOS:
-1. Style this doc
-2. Add theme option for colors
-3. Filtering by level or event type
-4. Table sorting
-5. Responsive design
-6. Organize files in templates and so
+This is the theme for FitnessDMI calendar page
+
+##TODOS:
+1. Add theme option for colors
+1. Filtering by level or event type
+1. Table sorting
+1. Responsive design
+1. Organize files in templates and so
