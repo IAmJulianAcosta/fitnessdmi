@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
-	<link href='css/style.css' rel='stylesheet' type='text/css'>
-</head>
-<body>
+<?php get_header() ?>
 <header>
 	<h1><span class="page-title">Fitness DMI</span><span class="separator"> | </span>
 		<time>Septiembre 2015</time>
@@ -101,13 +93,4 @@
 		</ul>
 	</aside>
 </main>
-</body>
-<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script>
-	$ (document).ready (function () {
-		$ ('tr.event').click (function () {
-			window.location = $ (this).find ('a').attr ('href');
-		});
-	});
-</script>
-</html>
+<?php get_footer() ?>
