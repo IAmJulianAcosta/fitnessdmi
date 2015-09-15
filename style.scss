@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+$light-green : #D3ECEB;
+$medium-green : #9DD5D3;
+$dark-green : #1FA29B;
+$gray : #89878C;
+$padding-left : 53px;
+
+@mixin legend-item () {
+	display       : flex;
+	flex-wrap     : wrap;
+	align-items   : center;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body {
+	margin      : 0;
+	padding     : 0;
+	background  : $light-green;
+	font-family : 'Raleway', Helvetica, Arial, sans-serif;
+	font-size   : 16px;
+}
+
+header {
+	margin-top : 40px;
+	background : $medium-green;
+	h1 {
+		text-transform : uppercase;
+		padding        : 28px 33px 28px $padding-left;
+		background     : $dark-green;
+		font-size      : 28px;
+		color          : white;
+		text-shadow    : 0 1px 1px #000000;
+		display        : inline-block;
+		margin         : 0;
+		.page-title {
+			font-weight : 700;
+		}
+		.separator, > time {
+			font-weight : 400;
+		}
+	}
+}
+
+main {
+	margin-top   : 25px;
+	padding-left : $padding-left;
+	display      : flex;
+}
+
+table#schedule {
+	max-width       : 960px;
+	min-width       : 800px;
+	border-collapse : separate;
+	border-spacing  : 0 0.5em;
+	th {
+		> .icon {
+			height  : 13px;
+			display : block;
+			margin: 0 auto;
+		}
+		&.date {
+			width : 50px;
+		}
+		&.sport {
+			width : 50px;
+		}
+		&.destination {
+
+		}
+		&.location {
+			width : 280px;
+		}
+		&.time {
+			width : 72px;
+		}
+		&.level {
+			width : 50px;
+		}
+	}
+	thead {
+		tr {
+			height : 20px;
+		}
+	}
+	tbody {
+		cursor: pointer;
+		border-collapse : separate;
+		border-spacing  : 0 1em;
+		tr {
+			background-color : white;
+			height           : 50px;
+			box-shadow       : 1px 1px 2px 0 rgba(21, 20, 15, 0.5);
+		}
+		td {
+			text-align : center;
+		}
+	}
+	.event-time {
+		width          : 24px;
+		border         : solid thin $gray;
+		border-radius  : 2px;
+		display        : flex;
+		flex-direction : column;
+		flex-wrap      : nowrap;
+		margin         : 0 auto;
+		.day-name {
+			background-color : $gray;
+			text-transform   : uppercase;
+			color            : white;
+			font-size        : 8px;
+		}
+		.day {
+			color     : $gray;
+			font-size : 12px;
+		}
+	}
+	.sport {
+		.icon {
+			margin : 0 auto;
+		}
+	}
+	.destination, .location, .time {
+		color      : $gray;
+		font-size  : 22px;
+		text-align : left;
+	}
+	.destination {
+		font-weight : bold;
+	}
+	.level {
+		.icon {
+			margin : 0 auto;
+		}
+	}
+}
+
+.legend {
+	margin-left : 30px;
+	color       : $dark-green;
+	ul {
+		list-style    : none;
+		padding       : 0 0px 10px 0;
+		border-bottom : solid 1px $dark-green;
+		&.level-legend {
+			width         : 100%;
+			border-bottom : none;
+			padding       : 10px 0 0 30px;
+		}
+		&:last-of-type {
+			border-bottom : none;
+		}
+	}
+	li {
+		@include legend-item ();
+		margin-bottom : 0.75em;
+		&.requirement {
+			margin-bottom : 0.5em;
+			&:before {
+				content: '+ ';
+				padding-right: 0.5ex;
+			}
+		}
+	}
+	h2 {
+		font-size : 16px;
+	}
+	.icon {
+		margin-right : 5px;
+		display      : inline-block;
+	}
+	.social-network-link {
+		@include legend-item ();
+		color: $dark-green;
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.icon {
+	background-image    : url('images/iconos-calendar.png');
+	background-repeat   : no-repeat;
+	background-position : 0px 0px;
+	display             : block;
+	&.sport {
+		height : 24px;
+	}
+	&.mtb {
+		background-position : left 0px;
+		width               : 28px;
+	}
+	&.running {
+		background-position : left -26px;
+		width               : 21px;
+	}
+	&.trekking {
+		background-position : left -52px;
+		width               : 17px;
+	}
+	&.basketball {
+		background-position : left -80px;
+		width               : 24px;
+	}
+	&.volleyball {
+		background-position : left -107px;
+		width               : 24px;
+	}
+	&.soccer {
+		background-position : left -133px;
+		width               : 24px;
+	}
+	&.tournament {
+		background-position : left -159px;
+		width               : 17px;
+	}
+	&.event {
+		background-position : left -186px;
+		width               : 26px;
+	}
+	/****** LEVELS ****/
+	&.level {
+		width  : 22px;
+		height : 13px;
+	}
+	&.easy {
+		background-position : left -343px;
+	}
+	&.medium {
+		background-position : left -362px;
+	}
+	&.hard {
+		background-position : left -381px;
+	}
+	&.multilevel {
+		background-position : left -399px;
+	}
+	/***** HEADERS ****/
+	&.header-icon {
+		width  : 13px;
+		height : 13px;
+	}
+	&.date {
+		background-position : left -220px;
+	}
+	&.destination {
+		background-position : left -246px;
+	}
+	&.location {
+		background-position : left -271px;
+	}
+	&.time {
+		background-position : left -297px;
+	}
+	&.level-header {
+		background-position : left -323px;
+		width               : 22px;
+		height              : 13px;
+	}
+	/**** ****/
+	&.facebook {
+		width               : 27px;
+		height              : 27px;
+		background-position : left -420px;
+	}
+}

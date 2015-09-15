@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+	<link href='style.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header>
+	<h1><span class="page-title">Fitness DMI</span><span class="separator"> | </span>
+		<time>Septiembre 2015</time>
+	</h1>
+</header>
+<main>
+	<table id="schedule">
+		<thead>
+		<tr>
+			<th class="date"><span class="icon date header-icon"></span></th>
+			<th class="sport"></th>
+			<th class="destination"><span class="icon destination header-icon"></span></th>
+			<th class="location"><span class="icon location header-icon"></span></th>
+			<th class="time"><span class="icon time header-icon"></span></th>
+			<th class="level"><span class="icon level-header"></span></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr class="event">
+			<td class="date">
+				<time class="event-time">
+					<span class="day-name">Mar</span>
+					<span class="day">1</span>
+				</time>
+			</td>
+			<td class="sport">
+				<span class="event sport icon"></span>
+			</td>
+			<td class="destination"><a href="https://www.facebook.com/groups/DMIpedalea/?fref=ts">Pico de Águila
+			                                                                                      Night</a></td>
+			<td class="location">Crepes Ciudad Jardín</td>
+			<td class="time">
+				<time>19:00</time>
+			</td>
+			<td class="level">
+				<span class="easy level icon"></span>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<aside class="legend">
+		<ul class="sports-legend">
+			<li class="sports-legend-item">
+				<span class="mtb sport icon"></span><span class="title">Ciclomontañismo</span></li>
+			<li class="sports-legend-item">
+				<span class="running sport icon"></span><span class="title">Trote / Caminata</span></li>
+		</ul>
+		<ul class="general-legend">
+			<li class="general-legend-item">
+				<span class="icon date header-icon"></span><span class="title">Fecha</span>
+			</li>
+			<li class="general-legend-item">
+				<span class="icon destination header-icon"></span><span class="title">Meta / Objetivo</span>
+			</li>
+			<li class="general-legend-item">
+				<span class="icon location header-icon"></span><span class="title">Punto de encuentro</span>
+			</li>
+			<li class="general-legend-item">
+				<span class="icon time header-icon"></span><span class="title">Hora de inicio</span>
+			</li>
+			<li class="general-legend-item">
+				<span class="icon level-header"></span><span class="title">Nivel / Dificultad</span>
+				<ul class="level-legend">
+					<li class="level-legend-item">
+						<span class="icon easy level"></span><span class="title">Fácil</span>
+					</li>
+					<li class="level-legend-item">
+						<span class="icon medium level"></span><span class="title">Medio</span>
+					</li>
+					<li class="level-legend-item">
+						<span class="icon hard level"></span><span class="title">Difícil</span>
+					</li>
+					<li class="level-legend-item">
+						<span class="icon multilevel level"></span><span class="title">Multinivel</span>
+					</li>
+				</ul>
+			</li>
+		</ul>
+		<h2>Requisitos</h2>
+		<ul class="requirements">
+			<li class="requirement">Hidratación</li>
+			<li class="requirement">Bloqueador Solar</li>
+			<li class="requirement">Casco - Guantes (MTB)</li>
+			<li class="requirement">Técnico-mecánica al día (MTB)</li>
+			<li class="requirement">Luces (delantera y trasera - MTB)</li>
+			<li class="requirement">Puntualidad</li>
+		</ul>
+		<ul class="social-networks">
+			<li class="social-network"><a href="https://www.facebook.com/groups/DMIpedalea/"
+			                              class="social-network-link"><span class="icon facebook"></span>/fitnessDMI</a>
+			</li>
+		</ul>
+	</aside>
+</main>
+</body>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script>
+	$ (document).ready (function () {
+		$ ('tr.event').click (function () {
+			window.location = $ (this).find ('a').attr ('href');
+		});
+	});
+</script>
+</html>
