@@ -56,12 +56,13 @@ main {
 }
 
 .main-container {
-	max-width       : 960px;
-	min-width       : 800px;
+	max-width : 960px;
+	min-width : 800px;
+	font-size : 12px;
 }
 
 table#schedule {
-	width: 100%;
+	width           : 100%;
 	border-collapse : separate;
 	border-spacing  : 0 0.5em;
 	th {
@@ -78,13 +79,13 @@ table#schedule {
 		}
 		&.destination {
 			> .icon {
-				margin-left: 50px
+				margin-left : 50px
 			}
 		}
 		&.location {
 			width : 280px;
 			> .icon {
-				margin-left: 50px
+				margin-left : 50px
 			}
 		}
 		&.time {
@@ -137,8 +138,8 @@ table#schedule {
 		}
 	}
 	.destination, .location, .time {
-		color      : $gray;
-		font-size  : 22px;
+		color     : $gray;
+		font-size : 22px;
 	}
 	.destination, .location {
 		text-align : left;
@@ -291,6 +292,6 @@ table#schedule {
 }
 
 .announce {
-	width: 100%;
-	color: $dark-green;
+	width : 100%;
+	color : $dark-green;
 }
