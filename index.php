@@ -52,6 +52,10 @@
 						$minute         = utf8_encode( strftime( '%M', $datetime_field ) );
 
 						$sports = wp_get_post_terms( get_the_ID(), 'event-category' );
+						$has_sport = is_array( $sports ) && sizeof( $sports ) > 0;
+
+						$levels    = wp_get_post_terms( get_the_ID(), 'level' );
+						$has_level = is_array( $levels ) && sizeof( $levels ) > 0;
 						?>
 						<tr class="event">
 							<td class="date">
@@ -62,10 +66,9 @@
 							</td>
 							<td class="sport">
 								<?php
-									$has_sport = is_array( $sports ) && sizeof( $sports ) > 0;
 									if ( $has_sport ) {
 										$sport = $sports [0];
-										?><span class="sport icon <?php $sport->slug ?>"></span><?php
+										?><span class="sport icon <?php echo $sport->slug ?>"></span><?php
 									}
 								?>
 							</td>
@@ -78,8 +81,6 @@
 							</td>
 							<td class="level">
 								<?php
-									$levels    = wp_get_post_terms( get_the_ID(), 'level' );
-									$has_level = is_array( $levels ) && sizeof( $levels ) > 0;
 									if ( $has_level ) {
 										$level = $levels [0];
 										?><span class="<?php echo $level->slug ?> level icon"></span><?php
