@@ -55,9 +55,13 @@ main {
 
 }
 
-table#schedule {
+.main-container {
 	max-width       : 960px;
 	min-width       : 800px;
+}
+
+table#schedule {
+	width: 100%;
 	border-collapse : separate;
 	border-spacing  : 0 0.5em;
 	th {
