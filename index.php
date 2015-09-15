@@ -17,34 +17,90 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr class="event">
-			<td class="date">
-				<time class="event-time">
-					<span class="day-name">Mar</span>
-					<span class="day">1</span>
-				</time>
-			</td>
-			<td class="sport">
-				<span class="event sport icon"></span>
-			</td>
-			<td class="destination"><a href="https://www.facebook.com/groups/DMIpedalea/?fref=ts">Pico de Águila
-			                                                                                      Night</a></td>
-			<td class="location">Crepes Ciudad Jardín</td>
-			<td class="time">
-				<time>19:00</time>
-			</td>
-			<td class="level">
-				<span class="easy level icon"></span>
-			</td>
-		</tr>
+		<?php
+			$first_of_month = strtotime( date( '01-m-Y' ) );
+			$last_of_month  = strtotime( date( 't-m-Y 23:59:59' ) );
+			$events_args    = array (
+				'posts_per_page' => 30,
+				'post_type'      => array ( 'event' ),
+				'meta_query'     => array (
+					array (
+						'key'     => 'datetime',
+						'compare' => '>=',
+						'value'   => $first_of_month
+					),
+					array (
+						'key'     => 'datetime',
+						'compare' => '<=',
+						'value'   => $last_of_month
+					)
+				),
+				'orderby'        => 'meta_value_num',
+				'meta_key'       => 'datetime',
+				'order'          => 'ASC'
+			);
+			$events_query   = new WP_Query( $events_args );
+			if ( $events_query->have_posts() ) {
+				while ( $events_query->have_posts() ) {
+					$events_query->the_post();
+
+					$datetime_field = get_field( 'datetime' );
+					$day            = utf8_encode( strftime( '%d', $datetime_field ) );
+					$day_of_week    = utf8_encode( strftime( '%a', $datetime_field ) );
+					$hour           = utf8_encode( strftime( '%H', $datetime_field ) );
+					$minute         = utf8_encode( strftime( '%M', $datetime_field ) );
+
+					$sports = wp_get_post_terms( get_the_ID(), 'event-category' );
+					$sport  = $sports [0];
+
+					$levels = wp_get_post_terms( get_the_ID(), 'level' );
+					$level  = $levels [0];
+					?>
+					<tr class="event">
+						<td class="date">
+							<time class="event-time">
+								<span class="day-name"><?php echo $day_of_week ?></span>
+								<span class="day"><?php echo $day ?></span>
+							</time>
+						</td>
+						<td class="sport">
+							<span class="sport icon <?php echo $sport->slug ?>"></span>
+						</td>
+						<td class="destination"><a href="<?php the_field( 'url' ) ?>"><?php the_field(
+									'destination' ) ?></a>
+						</td>
+						<td class="location"><?php the_field( 'location' ) ?></td>
+						<td class="time">
+							<time><?php echo sprintf( '%s:%s', $hour, $minute ) ?></time>
+						</td>
+						<td class="level">
+							<span class="<?php echo $level->slug ?> level icon"></span>
+						</td>
+					</tr>
+					<?php
+				}
+			}
+		?>
+
 		</tbody>
 	</table>
 	<aside class="legend">
 		<ul class="sports-legend">
-			<li class="sports-legend-item">
-				<span class="mtb sport icon"></span><span class="title">Ciclomontañismo</span></li>
-			<li class="sports-legend-item">
-				<span class="running sport icon"></span><span class="title">Trote / Caminata</span></li>
+			<?php
+				$categories = get_terms(
+					'event-category', array (
+					'hide_empty' => false
+				) );
+				foreach ( $categories as $category ) {
+					?>
+					<li class="sports-legend-item">
+						<span class="<?php echo $category->slug ?> sport icon"></span><span
+							class="title"><?php echo $category->name ?></span>
+					</li>
+					<?php
+				}
+			?>
+
 		</ul>
 		<ul class="general-legend">
 			<li class="general-legend-item">
@@ -62,18 +118,20 @@
 			<li class="general-legend-item">
 				<span class="icon level-header"></span><span class="title">Nivel / Dificultad</span>
 				<ul class="level-legend">
-					<li class="level-legend-item">
-						<span class="icon easy level"></span><span class="title">Fácil</span>
-					</li>
-					<li class="level-legend-item">
-						<span class="icon medium level"></span><span class="title">Medio</span>
-					</li>
-					<li class="level-legend-item">
-						<span class="icon hard level"></span><span class="title">Difícil</span>
-					</li>
-					<li class="level-legend-item">
-						<span class="icon multilevel level"></span><span class="title">Multinivel</span>
-					</li>
+					<?php
+						$levels = get_terms(
+							'level', array (
+								       'hide_empty' => false
+							       ) );
+						foreach ( $levels as $level ) {
+							?>
+							<li class="level-legend-item">
+								<span class="<?php echo $level->slug ?> icon level"></span><span
+									class="title"><?php echo $level->name ?></span>
+							</li>
+							<?php
+						}
+					?>
 				</ul>
 			</li>
 		</ul>
