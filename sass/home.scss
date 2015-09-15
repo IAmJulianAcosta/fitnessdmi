@@ -51,6 +51,7 @@ main {
 	margin-top   : 25px;
 	padding-left : $padding-left;
 	@include display-flex ();
+	@include flex-wrap(wrap);
 
 }
 
@@ -281,4 +282,9 @@ table#schedule {
 		height              : 27px;
 		background-position : left -420px;
 	}
+}
+
+.announce {
+	width: 100%;
+	color: $dark-green;
 }
