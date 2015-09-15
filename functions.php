@@ -20,6 +20,7 @@
 
 	require_once dirname( __FILE__ ) . '/tgmpa/class-tgm-plugin-activation.php';
 	add_action( 'tgmpa_register', 'fitnessdmi_register_required_plugins' );
+
 	function fitnessdmi_register_required_plugins() {
 		$plugins = array (
 			// This is an example of how to include a plugin bundled with a theme.
@@ -28,7 +29,7 @@
 				'slug'             => 'types',
 				'required'         => true,
 				'force_activation' => true
-			)
+			),
 			array (
 				'name'             => 'Advanced Custom Fields',
 				'slug'             => 'advanced-custom-fields',
