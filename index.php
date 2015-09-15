@@ -51,10 +51,6 @@
 					$minute         = utf8_encode( strftime( '%M', $datetime_field ) );
 
 					$sports = wp_get_post_terms( get_the_ID(), 'event-category' );
-					$sport  = $sports [0];
-
-					$levels = wp_get_post_terms( get_the_ID(), 'level' );
-					$level  = $levels [0];
 					?>
 					<tr class="event">
 						<td class="date">
@@ -64,7 +60,13 @@
 							</time>
 						</td>
 						<td class="sport">
-							<span class="sport icon <?php echo $sport->slug ?>"></span>
+							<?php
+								$has_sport = is_array( $sports ) && sizeof( $sports ) > 0;
+								if ( $has_sport ) {
+									$sport = $sports [0];
+									?><span class="sport icon <?php $sport->slug ?>"></span><?php
+								}
+							?>
 						</td>
 						<td class="destination"><a href="<?php the_field( 'url' ) ?>"><?php the_field(
 									'destination' ) ?></a>
@@ -74,7 +76,14 @@
 							<time><?php echo sprintf( '%s:%s', $hour, $minute ) ?></time>
 						</td>
 						<td class="level">
-							<span class="<?php echo $level->slug ?> level icon"></span>
+							<?php
+								$levels    = wp_get_post_terms( get_the_ID(), 'level' );
+								$has_level = is_array( $levels ) && sizeof( $levels ) > 0;
+								if ( $has_level ) {
+									$level = $levels [0];
+									?><span class="<?php echo $level->slug ?> level icon"></span><?php
+								}
+							?>
 						</td>
 					</tr>
 					<?php
@@ -121,8 +130,8 @@
 					<?php
 						$levels = get_terms(
 							'level', array (
-								       'hide_empty' => false
-							       ) );
+							'hide_empty' => false
+						) );
 						foreach ( $levels as $level ) {
 							?>
 							<li class="level-legend-item">
