@@ -9,3 +9,4 @@ This is the theme for FitnessDMI calendar page
 1. Responsive design
 1. Organize files in templates and so
 1. Share event in facebook
+1. Change language to spanish
