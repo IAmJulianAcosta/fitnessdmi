@@ -189,10 +189,11 @@ table#schedule {
 }
 
 .icon {
-	background-image    : url('../images/iconos-calendar.png');
+	background-image    : url('../images/iconos-calendar.svg');
 	background-repeat   : no-repeat;
 	background-position : 0px 0px;
 	display             : block;
+	background-size     : 28px;
 	&.sport {
 		height : 24px;
 	}
