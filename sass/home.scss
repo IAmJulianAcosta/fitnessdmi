@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import "compass";
+
 $light-green : #D3ECEB;
 $medium-green : #9DD5D3;
 $dark-green : #1FA29B;
@@ -102,13 +103,13 @@ table#schedule {
 		}
 	}
 	.event-time {
-		width          : 24px;
-		border         : solid thin $gray;
-		border-radius  : 2px;
+		width         : 24px;
+		border        : solid thin $gray;
+		border-radius : 2px;
 		@include display-flex ();
 		@include flex-direction (column);
 		@include flex-wrap (nowrap);
-		margin         : 0 auto;
+		margin        : 0 auto;
 		.day-name {
 			background-color : $gray;
 			text-transform   : uppercase;
