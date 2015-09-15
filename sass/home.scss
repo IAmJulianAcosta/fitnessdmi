@@ -132,9 +132,11 @@ table#schedule {
 			margin : 0 auto;
 		}
 	}
-	.destination, .location {
+	.destination, .location, .time {
 		color      : $gray;
 		font-size  : 22px;
+	}
+	.destination, .location {
 		text-align : left;
 	}
 	.destination {
