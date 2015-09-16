@@ -211,38 +211,31 @@ table#schedule {
 	background-size     : 28px 448px;
 	&.sport {
 		height : 24px;
+		width               : 28px;
 	}
 	&.mtb {
 		background-position : left 0px;
-		width               : 28px;
 	}
 	&.running {
 		background-position : left -26px;
-		width               : 21px;
 	}
 	&.trekking {
 		background-position : left -52px;
-		width               : 17px;
 	}
 	&.basketball {
 		background-position : left -80px;
-		width               : 24px;
 	}
 	&.volleyball {
 		background-position : left -107px;
-		width               : 24px;
 	}
 	&.soccer {
 		background-position : left -133px;
-		width               : 24px;
 	}
 	&.tournament {
 		background-position : left -159px;
-		width               : 17px;
 	}
 	&.event {
 		background-position : left -186px;
-		width               : 26px;
 	}
 	/****** LEVELS ****/
 	&.level {
