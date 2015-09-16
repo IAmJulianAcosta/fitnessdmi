@@ -1,5 +1,7 @@
 <?php
 
+	setlocale(LC_ALL, 'es_ES');
+
 	define ('CSS_DIRECTORY_URL', get_template_directory_uri() . '/css/');
 	define ('JAVASCRIPT_DIRECTORY_URL', get_template_directory_uri() . '/scripts/');
 
