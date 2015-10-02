@@ -145,8 +145,8 @@ table#schedule {
 		text-align : left;
 	}
 	.destination {
-		font-weight : bold;
-		padding-right: 20px;
+		font-weight   : bold;
+		padding-right : 20px;
 	}
 	.level {
 		.icon {
@@ -212,7 +212,7 @@ table#schedule {
 	background-size     : 28px 448px;
 	&.sport {
 		height : 24px;
-		width               : 28px;
+		width  : 28px;
 	}
 	&.mtb {
 		background-position : left 0px;
@@ -288,4 +288,11 @@ table#schedule {
 .announce {
 	width : 100%;
 	color : $dark-green;
+}
+
+.github-ribbon {
+	position : absolute;
+	top      : 0;
+	right    : 0;
+	border   : 0;
 }
