@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <header>
 	<h1><span class="page-title">Fitness DMI</span><span class="separator"> | </span>
-		<time>Septiembre 2015</time>
+		<time>Octubre 2015</time>
 	</h1>
 </header>
 <main>
