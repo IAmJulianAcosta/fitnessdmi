@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <header>
 	<h1><span class="page-title">Fitness DMI</span><span class="separator"> | </span>
-		<time>Octubre 2015</time>
+		<time datetime="<?php echo date ('Y-m')?>"><?php echo ucfirst(strftime ("%B %G"))?></time>
 	</h1>
 </header>
 <main>
