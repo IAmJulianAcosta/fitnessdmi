@@ -8,4 +8,3 @@ This is the theme for FitnessDMI calendar page
 1. Table sorting
 1. Responsive design
 1. Share event in facebook
-1. Show month dynamically
