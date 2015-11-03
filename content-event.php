@@ -5,7 +5,7 @@
 	$hour           = utf8_encode( strftime( '%H', $datetime_field ) );
 	$minute         = utf8_encode( strftime( '%M', $datetime_field ) );
 	
-	$datetime_string = date( 'Y-m-d G:i', $datetime_field );
+	$datetime_string = date( 'Y-m-d H:i', $datetime_field );
 	
 	$sports    = wp_get_post_terms( get_the_ID(), 'event-category' );
 	$has_sport = is_array( $sports ) && sizeof( $sports ) > 0;

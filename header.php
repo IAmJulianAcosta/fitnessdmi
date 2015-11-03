@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>
+<html <?php language_attributes(); ?> itemscope="" itemtype="http://schema.org/WebPage">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<title><?php wp_title(); ?></title>
